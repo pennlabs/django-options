@@ -48,8 +48,15 @@ class Option(models.Model):
                 raise ValidationError('Type is bool but value is not bool')
 
 
-def get_option(key, default=None):
+def get_option(key):
     if Option.objects.filter(key=key).exists():
         return Option.objects.get(key=key)
+
+    return None
+
+
+def get_value(key, default=None):
+    if Option.objects.filter(key=key).exists():
+        return Option.objects.get(key=key).value
 
     return default
