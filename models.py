@@ -56,7 +56,16 @@ def get_option(key):
 
 
 def get_value(key, default=None):
-    if Option.objects.filter(key=key).exists():
-        return Option.objects.get(key=key).value
+    o = get_option(key)
+    if o is not None:
+        return o.value
+
+    return default
+
+
+def get_bool(key, default=None):
+    o = get_option(key)
+    if o is not None:
+        return o.as_bool()
 
     return default
