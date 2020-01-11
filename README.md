@@ -35,4 +35,4 @@ See [CHANGELOG.md](https://github.com/pennlabs/django-runtime-options/blob/maste
 
 ## License
 
-See [LICENSE.md](https://github.com/pennlabs/django-runtime-options/blob/master/LICENSE.md)
+See [LICENSE](https://github.com/pennlabs/django-runtime-options/blob/master/LICENSE)
