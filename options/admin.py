@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Option
+from options.models import Option
 
 
 admin.site.register(Option)
