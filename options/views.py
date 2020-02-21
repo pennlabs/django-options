@@ -1,5 +1,6 @@
-from .models import Option
 from django.http import JsonResponse
+
+from options.models import Option
 
 
 def option_json(request):
@@ -8,7 +9,7 @@ def option_json(request):
         option_list = []
         for o in options:
             option_list.append(
-                {"key": o.key, "value": o.value, }
+                {"key": o.key, "value": o.value}
             )
         return JsonResponse({"Status": 200, "Options": option_list})
 
