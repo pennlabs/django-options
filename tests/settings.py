@@ -10,7 +10,6 @@ INSTALLED_APPS = (
     "django.contrib.admin",
     "django.contrib.messages",
     "options.apps.OptionsConfig",
-    "tests",
 )
 
 MIDDLEWARE = [
