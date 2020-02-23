@@ -10,7 +10,6 @@ INSTALLED_APPS = (
     "django.contrib.admin",
     "django.contrib.messages",
     "options.apps.OptionsConfig",
-    "tests",
 )
 
 MIDDLEWARE = [
@@ -20,6 +19,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
 ]
+
+ROOT_URLCONF = "tests.urls"
 
 TEMPLATES = [
     {

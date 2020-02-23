@@ -48,6 +48,12 @@ class Option(models.Model):
                 raise ValidationError("Type is bool but value is not bool")
         super().save(*args, **kwargs)
 
+    def serialize(self):
+        """
+        Serialize an option as a dictionary
+        """
+        return {self.key: self.value}
+
 
 def get_option(key):
     if Option.objects.filter(key=key).exists():
