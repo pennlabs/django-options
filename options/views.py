@@ -7,7 +7,7 @@ from options.models import Option
 class OptionListView(View):
     def get(self, request):
         options = Option.objects.all()
-        option_list = []
+        option_dict = {}
         for o in options:
-            option_list.append({"key": o.key, "value": o.value})
-        return JsonResponse({"Status": 200, "Options": option_list})
+            option_dict.update(o.serialize())
+        return JsonResponse(option_dict)
