@@ -13,6 +13,10 @@ class OptionTestCase(TestCase):
     def test_str(self):
         self.assertEqual(str(self.option), f"{self.key}->{self.value}")
 
+    def test_serialize(self):
+        expected = {self.key: self.value}
+        self.assertEqual(self.option.serialize(), expected)
+
     def test_as_int_int(self):
         self.option.value = "123"
         self.option.value_type = Option.TYPE_INT
