@@ -23,6 +23,16 @@ INSTALLED_APPS = (
 )
 ```
 
+(Optionally) add the following to `urls.py`
+
+```python
+urlpatterns = [
+    ...
+    path("options/", include("options.urls", namespace="options")),
+    ...
+]
+```
+
 ## Documentation
 
 Runtime options can either be set in the django admin site or by using the `setoption` command.
