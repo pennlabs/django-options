@@ -8,6 +8,7 @@ class OptionListView(View):
     """
     Sends public options as json data
     """
+
     def get(self, request):
         options = Option.objects.filter(public=True)
         option_dict = {}
