@@ -23,8 +23,6 @@ class Option(models.Model):
     key = models.CharField(max_length=255, unique=True)
     value = models.TextField()
     value_type = models.CharField(max_length=8, default=TYPE_TXT, choices=TYPE_CHOICES)
-
-    # whether this option is public(true) or private(false)
     public = models.BooleanField(default=True)
 
     description = models.TextField(blank=True)

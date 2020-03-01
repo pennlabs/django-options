@@ -6,7 +6,7 @@ from options.models import Option
 
 class OptionListView(View):
     """
-    Sends public options as json data
+    Return a json serialized list of all public options
     """
 
     def get(self, request):
