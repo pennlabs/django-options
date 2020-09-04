@@ -18,10 +18,10 @@ class OptionListViewTestCase(TestCase):
         self.option3 = Option.objects.create(key=self.key3, value=self.value3, public=True)
 
         self.bool_option = Option.objects.create(
-            key="boolvalue", value="true", type=Option.TYPE_BOOL, public=True
+            key="boolvalue", value="true", value_type=Option.TYPE_BOOL, public=True
         )
         self.int_option = Option.objects.create(
-            key="intvalue", value="3", type=Option.TYPE_INT, public=True
+            key="intvalue", value="3", value_type=Option.TYPE_INT, public=True
         )
 
     def test_view(self):
