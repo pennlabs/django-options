@@ -49,11 +49,29 @@ class Option(models.Model):
                 raise ValidationError("Type is bool but value is not bool")
         super().save(*args, **kwargs)
 
+    @property
+    def typed_value(self):
+        """
+        Return the value of this option with the correct type.
+        """
+        if self.value_type == self.TYPE_INT:
+            return self.as_int()
+        if self.value_type == self.TYPE_BOOL:
+            return self.as_bool()
+        return self.value
+
+    @typed_value.setter
+    def typed_value_setter(self, value):
+        """
+        Given a typed value, convert into string form and set the untyped variable.
+        """
+        self.value = str(value)
+
     def serialize(self):
         """
         Serialize an option as a dictionary
         """
-        return {self.key: self.value}
+        return {self.key: self.typed_value}
 
 
 def get_option(key):

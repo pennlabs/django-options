@@ -24,6 +24,6 @@ class Command(BaseCommand):
             option, created = Option.objects.update_or_create(key=key, defaults={"value": value})
 
         YELLOW = "\033[33m"
-        verb = f"Created" if created else f"Updated"
+        verb = "Created" if created else "Updated"
         verb = f"{YELLOW}{verb}"
         self.stdout.write(f"{verb} option '{option}' with type '{option.value_type}'")
