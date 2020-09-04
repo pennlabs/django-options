@@ -1,6 +1,10 @@
 Changelog
 =========
 
+0.1.3 (2020-09-04)
+------------------
+* Return correct type when serializing value
+
 0.1.2 (2020-03-01)
 ------------------
 * Allow options to be public or private
